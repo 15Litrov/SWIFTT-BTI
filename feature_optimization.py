@@ -1,10 +1,6 @@
 import numpy as np
 import math
 
-from scipy.optimize import differential_evolution
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
-
 import pygad
 import pickle
 
@@ -21,7 +17,7 @@ class FeatureOptimizer:
                  informativeness_threshold: float = 0,
                  independency_threshold: float = 0,
                  set_independency='default'):
-        self.indicesEncoder = featureEncoder #indices.IndicesClassEncoder(feature_classes, band_count, const_features)
+        self.indicesEncoder = featureEncoder
         self.informativeness_func = informativeness_func
         self.independency_func = independency_func
         self.max_feature_count = max_feature_count
