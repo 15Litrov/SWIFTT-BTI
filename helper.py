@@ -3,7 +3,8 @@ import numpy as np
 import pandas as pd
 from osgeo import gdal
 
-IMAGE_DIR = r"D:\SWIFTT_dataset_France"
+# root folder of train&validation dataset
+IMAGE_DIR = r"sample_data/ds1"
 
 LOAD_IMAGE_BIT = 1
 LOAD_FTYPE_BIT = 2
