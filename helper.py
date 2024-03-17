@@ -46,10 +46,13 @@ def loadImage(file_name, load_flags):
 
 def getStressedImagesNames(xlsx_name):
 	df = pd.read_excel(os.path.join(IMAGE_DIR, xlsx_name))
-	print(df.shape)
-	output_array = [None]*df.shape[0]
-	for i, row in df.iterrows():
+	output_array = []
+	for _, row in df.iterrows():
 		json_index = row['geojson']
+		folder_path = os.path.join(IMAGE_DIR, str(json_index))
+		if not os.path.exists(folder_path):
+			continue
+
 		date_range = row['time range']
 		parts = str.split(date_range, '" - "')
 		begin = str.split(parts[0][1:], '-')
@@ -72,7 +75,7 @@ def getStressedImagesNames(xlsx_name):
 			img_end_int = int(end[0]) * 100 * 100 + int(end[1]) * 100 + int(end[2])
 
 			if begin_int <= img_begin_int and img_end_int <= end_int:
-				output_array[i] = (json_index, f)
+				output_array.append((json_index, f))
 				break
 
 	return output_array
