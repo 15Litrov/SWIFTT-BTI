@@ -1,4 +1,4 @@
-# Optimized Feature Engineering for Semantic Segmentation of Satellite Imagery
+# Forest Stress Detection Using Feature Engineering & Selection Approach Optimized for Satellite Imagery
 
 The repository represents the source code used in this study.
 
@@ -10,7 +10,9 @@ Data are available on request. For requests, please contact e-mail: mmda.ipt.kpi
 
 ## Dependencies
 
-All experiments were performed using Python 3.11.3. Required libraries listed in requirements.yml.
+Feature selection performed using Python 3.8. Requirements listed in environment.yml.
+
+Model training performed using Python 3.10. Requirements listed in training/environment.yaml.
 
 ## Documentation
 
@@ -79,6 +81,6 @@ opt.fit(data, data[1], False)
 print(opt.selected_features)
 # fitness value of selected features
 print(opt.get_fitness_)
-# matrix of pairwise independence of selcted features
+# matrix of pairwise independence of selected features
 print(opt.get_independency_)
 ```

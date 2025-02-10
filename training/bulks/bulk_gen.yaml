@@ -1,0 +1,16 @@
+root_dir: ''
+split_path: split_64_perblock.csv
+models:
+  - generated\MRMR_2.yaml
+  - generated\MRMR_3.yaml
+  - generated\MRMR_4.yaml
+  - generated\PL_2.yaml
+  - generated\PS_2.yaml
+  - generated\PL_3.yaml
+  - generated\PS_3.yaml
+  - generated\PL_4.yaml
+  - generated\PS_4.yaml
+  - generated\FFS_2.yaml
+  - generated\FFS_3.yaml
+  - generated\PFIwRF_2.yaml
+  - generated\PFIwRF_3.yaml

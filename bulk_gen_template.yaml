@@ -1,0 +1,3 @@
+root_dir: ''
+split_path: split_64_perblock.csv
+models:

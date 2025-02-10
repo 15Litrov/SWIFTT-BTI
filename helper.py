@@ -4,7 +4,7 @@ import pandas as pd
 from osgeo import gdal
 
 # root folder of train&validation dataset
-IMAGE_DIR = r"sample_data/ds1"
+IMAGE_DIR = r"SWIFTT_dataset_France"
 
 LOAD_IMAGE_BIT = 1
 LOAD_FTYPE_BIT = 2

@@ -1,0 +1,14 @@
+data_version: S2c
+arch_name: LinkNet
+encoder_name: timm-mobilenetv3_small_100
+encoder_weights: imagenet
+vv2rgb_name: PS_3
+model_version: default
+loss_function: JACCARD
+hparams:
+  -
+    image_size: 64
+    learning_rate: 0.001
+    max_epochs: 500
+    batch_size: 16
+    accumulate_grad_batches: 1

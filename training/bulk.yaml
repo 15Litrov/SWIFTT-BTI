@@ -1,0 +1,5 @@
+root_dir: '..'
+split_path: split.csv
+models:
+  - sample.yaml
+  - sample.yaml
