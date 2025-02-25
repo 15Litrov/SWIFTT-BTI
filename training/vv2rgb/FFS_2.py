@@ -5,15 +5,15 @@ band_indexes = list(range(1, 12))
 encoder = IndicesClassEncoderEq([NORMP], band_indexes)
 
 INDICES = [
-    encoder.getIndex(13),
-    encoder.getIndex(54),
-    encoder.getIndex(76),
+    encoder.getIndex(23),
+    encoder.getIndex(50),
+    encoder.getIndex(115),
 ]
 
 MINMAX = [
-    [-0.3045226812229239, 0.10015644019435427],
-    [-0.6560889572250587, -0.19370390259716894],
-    [-0.7410045649390549, -0.3036949073831795],
+    [-0.10015644019435425, 0.304522681222924],
+    [0.03558695406765337, 0.2175924296487554],
+    [0.28353724853810136, 0.719210522316128],
 ]
 
 def convert(s2):
@@ -28,8 +28,9 @@ def convert(s2):
         rgb[:, :, i] = (val - MINMAX[i][0]) / (MINMAX[i][1] - MINMAX[i][0]) 
 
     db_norm = np.clip(255 * rgb, 0, 255).astype("uint8")
+    db_norm[nf, :] = 128
     return db_norm
 
 NORM_MEAN = (0, 0, 0)
 NORM_STD = (1, 1, 1)
-NODATA_RGB = list(convert(np.zeros((1, 1, 12)))[0, 0, :])
+NODATA_RGB = [128, 128, 128]#list(convert(np.zeros((1, 1, 12)))[0, 0, :])

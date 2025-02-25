@@ -1,0 +1,13 @@
+data_version: S2c
+arch_name: LinkNet
+encoder_name: efficientnet-b4
+encoder_weights: imagenet
+vv2rgb_name: rgb
+model_version: default
+hparams:
+  -
+    image_size: 64
+    learning_rate: 0.0005
+    max_epochs: 500
+    batch_size: 32
+    accumulate_grad_batches: 1

@@ -1,0 +1,8 @@
+root_dir: ''
+split_path: split.csv
+models:
+  # - 64c\\linknet_efficientb4_hue3m2.yaml
+  # - 64c\\linknet_efficientb4_rgb.yaml
+  # - 64c\linknet_mobile-small_rgb.yaml
+  # - 64c\linknet_mobile-small_norm.yaml
+    - 64c\linknet_mobile-small_norm4.yaml

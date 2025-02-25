@@ -28,8 +28,9 @@ def convert(s2):
         rgb[:, :, i] = (val - MINMAX[i][0]) / (MINMAX[i][1] - MINMAX[i][0]) 
 
     db_norm = np.clip(255 * rgb, 0, 255).astype("uint8")
+    db_norm[nf, :] = 128
     return db_norm
 
 NORM_MEAN = (0, 0, 0)
 NORM_STD = (1, 1, 1)
-NODATA_RGB = list(convert(np.zeros((1, 1, 12)))[0, 0, :])
+NODATA_RGB = [128, 128, 128]#list(convert(np.zeros((1, 1, 12)))[0, 0, :])

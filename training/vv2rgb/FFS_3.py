@@ -6,14 +6,14 @@ encoder = IndicesClassEncoderEq([HueSimp], band_indexes)
 
 INDICES = [
     encoder.getIndex(13),
-    encoder.getIndex(185),
-    encoder.getIndex(301),
+    encoder.getIndex(625),
+    encoder.getIndex(741),
 ]
 
 MINMAX = [
     [-0.00017381035477609993, 0.0002901600183436201],
-    [-0.012026285670949854, 0.011889951857663133],
-    [0.003435080688087358, 0.025318369530414345],
+    [-0.011889951857663119, 0.012026285670949856],
+    [-0.020898099757921507, -0.002478631219620612],
 ]
 
 def convert(s2):
@@ -28,8 +28,9 @@ def convert(s2):
         rgb[:, :, i] = (val - MINMAX[i][0]) / (MINMAX[i][1] - MINMAX[i][0]) 
 
     db_norm = np.clip(255 * rgb, 0, 255).astype("uint8")
+    db_norm[nf, :] = 128
     return db_norm
 
 NORM_MEAN = (0, 0, 0)
 NORM_STD = (1, 1, 1)
-NODATA_RGB = list(convert(np.zeros((1, 1, 12)))[0, 0, :])
+NODATA_RGB = [128, 128, 128]#list(convert(np.zeros((1, 1, 12)))[0, 0, :])
